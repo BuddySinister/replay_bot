@@ -14,7 +14,7 @@ PREFIX = os.getenv("PREFIX")
 CHANNEL = os.getenv("CHANNEL")
 
 
-class InertBot(commands.Bot, ABC):
+class ReplayBot(commands.Bot, ABC):
     def __init__(self):
         self.call_freq = 30
         self.cmd_tracker = {'cmd': '', 'last_use': 0.0}
@@ -46,7 +46,7 @@ class InertBot(commands.Bot, ABC):
 
 if __name__ == '__main__':
     try:
-        bot = InertBot()
+        bot = ReplayBot()
         bot.run()
     except KeyboardInterrupt:
         exit()
